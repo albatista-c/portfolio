@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anna Luisa Batista | Design Portfolio</title>
+<meta name="description" content="Engaging through design: textbooks, logos, posters, and scientific data visualization by Anna Luisa Batista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfaff; --ink:#1d1633; --muted:#5d5675; --violet:#4400c8; --lilac:#e9e2ff;
+  --gold:#f2c230; --sky:#8fd0dc; --line:#d9d2ee;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#14102a;--ink:#f1edff;--muted:#b4abd6;--violet:#b9a2ff;--lilac:#251d4a;--line:#3a3166}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.65 var(--body)}
+a{color:var(--violet)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;padding-top:.8rem;padding-bottom:.8rem;font-family:var(--head);font-size:.95rem}
+nav strong{margin-right:auto;font-weight:800}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--violet);text-decoration:underline}
+header.hero{padding:5rem 0 3.5rem}
+h1{font:800 clamp(2.6rem,7vw,5.2rem)/1.02 var(--head);letter-spacing:-.03em;margin:0 0 1.5rem;max-width:15ch}
+.by{font:700 1.3rem var(--head);color:var(--violet);margin:0 0 1.5rem}
+.lede{max-width:40rem;color:var(--muted)}
+.contents{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;list-style:none;margin:2rem 0 0}
+.contents a{display:block;padding:.45rem 1rem;border:2px solid var(--ink);border-radius:2rem;text-decoration:none;color:var(--ink);font:600 .95rem var(--head)}
+.contents a:hover{background:var(--ink);color:var(--paper)}
+section{padding:4rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.9rem,4vw,2.9rem)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 .5rem}
+h3{font:700 1.35rem/1.25 var(--head);margin:0 0 .6rem}
+.sub{color:var(--muted);max-width:42rem;margin:0 0 2.5rem}
+.project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:2.5rem;align-items:start;margin-bottom:4rem}
+.project.flip{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
+.project.flip figure{order:2}
+.project p{margin:0 0 1rem;max-width:60ch}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:.4rem;background:var(--lilac);min-height:12rem;object-fit:cover}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+.tag{display:inline-block;font:600 .85rem var(--head);background:var(--lilac);color:var(--violet);padding:.15rem .7rem;border-radius:1rem;margin-bottom:.8rem}
+.palette{display:flex;gap:.4rem;margin:.5rem 0 1rem}
+.palette i{width:1.6rem;height:1.6rem;border-radius:50%;border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:2rem}
+.grid article p{font-size:1rem;margin:0}
+.grid figure img{aspect-ratio:4/5}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.facts li{border-left:4px solid var(--gold);padding:.2rem 0 .2rem .8rem;font-size:1rem}
+.facts b{display:block;font:800 1.5rem var(--head)}
+footer{padding:3rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:1rem}
+@media (max-width:760px){
+  .project,.project.flip{grid-template-columns:1fr;gap:1.25rem}
+  .project.flip figure{order:0}
+  header.hero{padding:3rem 0 2rem}
+}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:1rem}
+.steps li{counter-increment:s;border:2px solid var(--ink);border-radius:.6rem;padding:.8rem 1rem;font-size:1rem;line-height:1.45}
+.steps li::before{content:counter(s);display:inline-block;width:1.7rem;height:1.7rem;line-height:1.7rem;text-align:center;border-radius:50%;background:var(--violet);color:var(--paper);font:700 .9rem var(--head);margin-bottom:.4rem}
+.steps b{display:block;font:700 1.05rem var(--head)}
+.found{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem;margin:0 0 2rem}
+.found div{border-left:4px solid var(--sky);padding-left:1rem}
+.found h4{font:700 1.1rem var(--head);margin:0 0 .3rem}
+.found p{margin:0;font-size:1rem}
+.duck{position:fixed;left:0;top:0;width:44px;height:44px;pointer-events:none;z-index:1000;opacity:0;transition:opacity .2s}
+.duck svg{width:100%;height:100%;display:block;transition:transform .12s}
+.duck.down svg{transform:scale(.82,1.12)}
+body.has-duck,body.has-duck *{cursor:none!important}
+.bubble{position:fixed;z-index:999;pointer-events:none;border-radius:50%;border:2px solid rgba(143,208,220,.95);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.9),rgba(143,208,220,.25) 60%);animation:rise var(--t) ease-out forwards}
+@keyframes rise{to{transform:translate(var(--dx),-120px) scale(1.15);opacity:0}}
+@media (prefers-reduced-motion:reduce){.bubble{animation-duration:.01s}}
+@media (max-width:760px){.project figure{max-width:100%}}
+
+.menu{position:relative}
+.menu summary{cursor:pointer;list-style:none;color:var(--ink)}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:"\25BE";margin-left:.35rem;font-size:.8em}
+.menu summary:hover{color:var(--violet);text-decoration:underline}
+.menu[open] summary::after{content:"\25B4"}
+.drop{position:absolute;top:calc(100% + .6rem);left:-.8rem;min-width:14rem;background:var(--paper);border:1px solid var(--line);border-radius:.5rem;padding:.4rem;box-shadow:0 8px 24px rgba(29,22,51,.15)}
+.drop a{display:block;padding:.5rem .8rem;border-radius:.3rem}
+.drop a:hover{background:var(--lilac)}
+.contact{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 2rem}
+.contact b{font:700 1rem var(--head);color:var(--ink);margin-right:.4rem}
+
+.btn{display:inline-block;padding:.6rem 1.3rem;border-radius:2rem;background:var(--violet);color:var(--paper);font:700 1rem var(--head);text-decoration:none;margin-top:.5rem}
+.btn:hover{filter:brightness(1.15)}
+.status{display:inline-block;font:600 .85rem var(--head);border:2px solid var(--gold);padding:.1rem .7rem;border-radius:1rem;margin-bottom:.8rem}
+</style>
+</head>
+<body>
+<nav aria-label="Primary">
+  <div class="wrap">
+    <strong>Anna Luisa Batista</strong>
+    <a href="#textbook">Textbook</a>
+    <a href="#logos">Logos</a>
+    <a href="#posters">Posters</a>
+    <a href="#database">Web project</a>
+    <details class="menu">
+      <summary>Research</summary>
+      <div class="drop">
+        <a href="#research">Antibody tracking</a>
+        <a href="#protocol">Cancer therapy protocol</a>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Engaging through design</h1>
+    <p class="by">by Anna Luisa Batista</p>
+    <p class="lede">A selection of my design projects, all focused on communicating ideas effectively through visual media. My work ranges from capturing the personalities and identities of groups to clearly presenting complex technical content.</p>
+    <ul class="contents">
+      <li><a href="#textbook">Kazakh language textbook</a></li>
+      <li><a href="#logos">Club logos</a></li>
+      <li><a href="#posters">Linguistics talk posters</a></li>
+      <li><a href="#database">Phonology database</a></li>
+      <li><a href="#research">Nanotechnology research</a></li>
+      <li><a href="#protocol">Cancer therapy protocol</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section id="textbook">
+  <div class="wrap">
+    <h2>Kazakh textbook</h2>
+    <p class="sub">Cover art and page design for a Kazakh language textbook (work in progress).</p>
+
+    <article class="project">
+      <figure><img src="images/kazakh-cover.png" alt="Watercolor-style illustration of snow-capped mountains above a lake, in blues, pinks and greens" loading="lazy"></figure>
+      <div>
+        <h3>Cover art</h3>
+        <p>The illustration references multiple mountain regions and a lake in Kazakhstan, combined into one abstract landscape so diverse geographic features are represented in a single image.</p>
+        <p>The stylized approach lets the cover feel cohesive rather than region-specific, while still evoking a strong sense of place. The goal was a striking, inviting cover that captures attention and encourages readers to pick up the book and begin studying the language.</p>
+      </div>
+    </article>
+
+    <article class="project flip">
+      <figure><img src="images/kazakh-spread.png" alt="Facing textbook pages with a teal header shape, interview photo, fill-in-the-blank activities, and grammar tables" loading="lazy"><figcaption>Sample spread, pages 62&ndash;63</figcaption></figure>
+      <div>
+        <h3>Page design</h3>
+        <p>I focused on visual clarity, engagement, and usability.</p>
+        <p><strong>Cohesion across the spread.</strong> The blue header shape visually crosses page boundaries when facing pages align.</p>
+        <p><strong>Interactive elements.</strong> QR codes link to supplemental content such as audio recordings, videos, and online textbook materials.</p>
+        <p><strong>Color.</strong> The scheme draws from the Kazakh flag, using contrasting hues from opposite ends of the spectrum for clarity and emphasis.</p>
+        <p><strong>Contextual learning.</strong> Enriching, non-essential vocabulary is defined in the bottom margins so it supports learners without distracting from core content.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="wrap">
+    <h2>Club logos</h2>
+    <p class="sub">Two University of Washington club identities, each built around a symbol its members already recognize.</p>
+
+    <article class="project">
+      <figure><img src="images/husky-cycling-logo.png" alt="Cartoon purple husky wearing gold sunglasses, with UW on one paw and HCC on the other" loading="lazy"></figure>
+      <div>
+        <h3>Husky Cycling Club</h3>
+        <p>I designed this logo to capture the ethos of the University of Washington Husky Cycling Club through a cartoon husky, the official mascot of UW and the club.</p>
+        <p>&ldquo;UW&rdquo; and &ldquo;HCC&rdquo; appear on the left and right paws, reading as University of Washington Husky Cycling Club. Lightning bolts represent speed and energy, and the fur pattern forms a subtle &ldquo;W&rdquo; for Washington. Aerodynamic sunglasses reference competitive cycling.</p>
+        <p>The purple and gold scheme reflects UW identity, while darker accents add contrast.</p>
+        <p>The team responded well, and the logo now appears on cycling jerseys, stickers, helmets, bicycles, and alumni materials.</p>
+      </div>
+    </article>
+
+    <article class="project flip">
+      <figure><img src="images/linguistics-club-seal.png" alt="Round purple seal with a white network of colorful nodes forming a bird, ringed by the words University of Washington Undergraduate Linguistics Society" loading="lazy"></figure>
+      <div>
+        <h3>Undergraduate Linguistics Club seal</h3>
+        <p>The central &ldquo;Wug,&rdquo; an endearing symbol from a foundational study on language acquisition, anchors the design and reflects the club&rsquo;s academic roots.</p>
+        <p>The surrounding network is bold and graphic, and can be read as either a neural network or a social network. It points to subfields such as Computational Linguistics, Sociolinguistics, and Language Acquisition.</p>
+        <p>A white foreground contrasts with UW&rsquo;s signature purple background, and colorful nodes add pops of color.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="posters">
+  <div class="wrap">
+    <h2>Posters for linguistics talks</h2>
+    <p class="sub">Announcements for Undergraduate Linguistics Club at UW meetings. Each poster takes its look from the topic of the talk.</p>
+    <div class="grid">
+      <article>
+        <figure><img src="images/poster-abugidas.png" alt="Black poster titled Abugidas, framed by six South Asian writing systems on a rainbow-streaked border" loading="lazy"></figure>
+        <h3>Abugidas</h3>
+        <p>A visual introduction to abugidas, framed by six common writing systems whose colors and patterns reference South Asian cultures, reinforcing the linguistic and geographic context of the talk.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-officers.png" alt="Highlighter-bright poster reading 2025-26 Officer Board with cartoon Wug birds" loading="lazy"></figure>
+        <h3>2025&ndash;26 officer board</h3>
+        <p>Playful, highlighter-bright design spotlighting club officers through personalized &ldquo;Wugs,&rdquo; using humor and motion to emphasize community and approachability in linguistics.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-hot-takes.png" alt="Red and green split poster with yellow text reading Hot Takes with ULS" loading="lazy"></figure>
+        <h3>Hot Takes</h3>
+        <p>A bold color split captures the spirit of &ldquo;Hot Takes,&rdquo; visually encoding the Kiki-Bouba effect through sharp and rounded forms to reference sound symbolism theory.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-second-language-acquisition.png" alt="Green chalkboard poster titled Second Language Acquisition with chalk doodles of Duolingo and Kahoot" loading="lazy"></figure>
+        <h3>Second Language Acquisition</h3>
+        <p>Depicted as a classroom scene, with chalkboard imagery and teasers of interactive tools like Kahoot and Duolingo to frame learning as dynamic.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-computational-linguistics.png" alt="Pastel watercolor poster titled Topics in Computational Linguistics with Wugs, a keyboard and a neural network thought bubble" loading="lazy"></figure>
+        <h3>Topics in Computational Linguistics</h3>
+        <p>Made inviting through ornate Wugs and colors, references to ELIZA and neural networks, and a coding-inspired font that softens an intimidating subject.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-neurolinguistics.png" alt="Dark gradient poster for the Winter Book Club choice, Neurolinguistics by Giosu&egrave; Baggio" loading="lazy"></figure>
+        <h3>Neurolinguistics book club</h3>
+        <p>An adapted neurolinguistics book cover uses matching fonts and glowing colors to highlight brain-language connections and ensure visual impact.</p>
+      </article>
+      <article>
+        <figure><img src="images/poster-pragmatics.png" alt="Red curtain poster titled Pragmatics and Speech Acts in script lettering, with theater masks" loading="lazy"></figure>
+        <h3>Pragmatics &amp; Speech Acts</h3>
+        <p>A theatrical composition illustrates Grice&rsquo;s Maxims, embedding insider linguistic humor through visual references to Manner and Relevance.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="database">
+  <div class="wrap">
+    <h2>Phonological Inventory Database of Central Eurasia</h2>
+    <p class="sub">A website I designed and built, in collaboration with Talant Mawkanuli, at the University of Washington Department of Middle Eastern Languages &amp; Cultures. It is a work in progress.</p>
+
+    <article class="project">
+      <figure><img src="images/turkic-inventory.png" alt="Screenshot of the Phonological Inventory Database of Central Eurasia home page with its map section" loading="lazy"><figcaption>Home page of the database</figcaption></figure>
+      <div>
+        <span class="status">In progress</span>
+        <h3>Finding a language&rsquo;s sound system by place</h3>
+        <p>Phonological inventories (the sounds a language uses) are usually spread across papers and tables. This site makes them findable by geography: an interactive map of Central Eurasia pinpoints regions and links each one to the inventories for the languages spoken there.</p>
+        <p><strong>My role.</strong> I did all of the website work: the design, page layout, navigation, and map page.</p>
+        <p><strong>Navigation.</strong> A dropdown menu leads to a language directory, a phoneme search, and supporting pages, so a visitor can browse by place, by language, or by sound.</p>
+        <p><strong>Accessibility.</strong> A planned feature is translation into Kazakh, Turkish, or both, so speakers of the languages being documented can use the site.</p>
+        <a class="btn" href="https://albatista-c.github.io/turkic-inventory/" target="_blank" rel="noopener">Visit the site</a>
+      </div>
+    </article>
+
+    <h3>Roadmap</h3>
+    <ul class="steps">
+      <li><b>Map</b>Embed Google Maps with the JavaScript API for custom markers and smoother interaction.</li>
+      <li><b>Layout</b>Refine and expand the front end of the supporting pages.</li>
+      <li><b>Content</b>Add linguistic content and resources to those pages.</li>
+      <li><b>Translation</b>Make the site available in Kazakh and/or Turkish.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Data presentation for nanotechnology research</h2>
+    <p class="sub">Visualization and poster work from my internship at the Center for Integrated Nanotechnologies, Los Alamos National Laboratory.</p>
+
+    <article class="project">
+      <figure><img src="images/antigen-trajectories.png" alt="3D plot of colorful random-walk trajectories with X, Y and Z position axes" loading="lazy"></figure>
+      <div>
+        <h3>Trajectories of antigens</h3>
+        <p>This figure shows multiple three-dimensional trajectories of quantum-dot-labeled antigens undergoing random-walk motion in physiological solution, used to study antibody&ndash;antigen kinetics.</p>
+        <p>I wrote a Python visualization pipeline that reproduces the original color scheme from legacy C++ code. I defined an array of the seven required RGB values and implemented gradient interpolation by specifying the number of points per color, giving smooth transitions along each trajectory.</p>
+        <p>This preserved visual continuity and scientific accuracy while making complex 3D motion easy to interpret.</p>
+      </div>
+    </article>
+
+    <article class="project flip">
+      <figure><img src="images/los-alamos-poster.png" alt="Research poster titled Single Particle Tracking for the Determination of Dissociation Constant" loading="lazy"><figcaption>Poster LA-UR-25-26989</figcaption></figure>
+      <div>
+        <h3>Student symposium poster</h3>
+        <p>I designed this poster to describe my internship project: tracking the trajectories of quantum-dot-labeled antigens in physiological solution to predict antibody&ndash;antigen dissociation dynamics.</p>
+        <p>It highlights my Python-based graphical representation of three-dimensional trajectories and my calculations of antigen diffusivities using the Stokes&ndash;Einstein equation. The design emphasizes clarity and accessibility while accurately conveying complex kinetic data.</p>
+        <p>This work has been submitted for peer review and is expected to be published in <em>Review of Scientific Instruments</em> in 2026.</p>
+        <ul class="facts">
+          <li><b>42</b>single particle trajectories</li>
+          <li><b>1.2&times;10<sup>-6</sup> m&sup2;/s</b>average D, &plusmn;47.0% dispersion</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+<section id="protocol">
+  <div class="wrap">
+    <h2>Designing a lab protocol people can repeat</h2>
+    <p class="sub">Summer 2026, Center for Integrated Nanotechnologies, Los Alamos National Laboratory. I treated a bench protocol like a product: the users are other researchers, and the goal is that anyone can follow it and get the same result.</p>
+
+    <article class="project">
+      <figure><img src="images/making-safer-radiations-poster.png" alt="Research poster titled Making Safer Radiations Accessible for Cancer Treatments, with motivation, protocol cycle, and conclusion panels" loading="lazy"><figcaption>Poster LA-UR-26-26481</figcaption></figure>
+      <div>
+        <h3>Making Safer Radiations Accessible for Cancer Treatments</h3>
+        <p>Many cancer therapies harm healthy tissue, especially when treating metastatic disease. Targeted radionuclide therapy pairs <em>power</em> (radiation that acts locally) with <em>precision</em> (antibodies that carry it to tumor cells). I built the foundation: a reliable way to attach the trastuzumab antibody, which targets HER2-positive breast cancer cells, to gold nanoparticles.</p>
+        <p>The poster shows the same problem three ways: a motivation panel for newcomers, a chemistry diagram of how the antibody attaches, and a looping protocol cycle that a lab member can follow step by step.</p>
+        <ul class="facts">
+          <li><b>99% / 1%</b>PEG-methoxy to PEG-DBCO gave the most stable particles</li>
+          <li><b>Copper-free</b>click chemistry keeps the antibody able to find its target</li>
+        </ul>
+      </div>
+    </article>
+
+    <h3>The design loop</h3>
+    <p class="sub">The protocol is a cycle I ran repeatedly, changing one variable at a time.</p>
+    <ol class="steps">
+      <li><b>Plan</b>Set independent variables such as temperature, materials, ratios, time, and speed.</li>
+      <li><b>Build</b>Coat gold nanoparticles with PEG and attach the SH-PEG-DBCO linker.</li>
+      <li><b>Test</b>Check stability, recovery, and aggregation. UV-Vis confirms the DBCO modification worked.</li>
+      <li><b>Analyze</b>Compare how methoxy:DBCO ratio, Tween 20 percentage, and LoBind tubes affect results.</li>
+      <li><b>Refine</b>Adjust the PEG ratio and Tween 20, then improve the workflow.</li>
+    </ol>
+
+    <h3>What testing told me</h3>
+    <div class="found">
+      <div><h4>Fewer lost particles</h4><p>LoBind tubes reduced nanoparticles sticking to tube walls, improving recovery across the workflow.</p></div>
+      <div><h4>Less clumping</h4><p>Adding Tween 20 minimized aggregation and kept particles dispersed. The highest safe concentration still needs study so it doesn&rsquo;t raise cell toxicity.</p></div>
+      <div><h4>Right balance of sites</h4><p>A mostly inert PEG coating with a little DBCO cut nonspecific interactions while leaving enough sites to attach antibodies.</p></div>
+    </div>
+
+    <h3>My contributions</h3>
+    <ul>
+      <li>Synthesized gold-palladium core-shell nanoparticles to support research on safer, targeted cancer radiation therapies.</li>
+      <li>Developed a protocol for bioconjugating azide-tagged antibodies to DBCO-functionalized gold nanoparticles, establishing a reproducible platform for future work with radiolabeled <sup>103</sup>Pd.</li>
+      <li>Conducted cytotoxicity assays and evaluated experimental results to inform subsequent design and testing decisions.</li>
+    </ul>
+    <p class="sub" style="margin-top:1.5rem">Next: study how cells take up the conjugates and how toxic they are, study DNA double-strand breaks, make radiolabeled Au-Pd nanoparticles, and test their effect in vitro.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Contact</h3>
+    <ul class="contact">
+      <li><b>UW email</b><a href="mailto:abatista@uw.edu">abatista@uw.edu</a></li>
+      <li><b>Personal email</b><a href="mailto:annaluisabat@gmail.com">annaluisabat@gmail.com</a></li>
+      <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/anna-luisa-batista" target="_blank" rel="noopener">linkedin.com/in/anna-luisa-batista</a></li>
+    </ul>
+    <p style="margin:1.5rem 0 0">&copy; Anna Luisa Batista</p>
+  </div>
+</footer>
+<div class="duck" id="duck" aria-hidden="true"><svg viewBox="0 0 64 64"><ellipse cx="30" cy="44" rx="22" ry="14" fill="#ffd83d" stroke="#c99a00" stroke-width="2"/><path d="M14 40c6 8 20 8 28-2" fill="none" stroke="#e8b800" stroke-width="2" stroke-linecap="round"/><circle cx="42" cy="22" r="13" fill="#ffd83d" stroke="#c99a00" stroke-width="2"/><path d="M52 22c8 0 10 4 10 4s-3 5-11 4z" fill="#ff8a1f" stroke="#d96a00" stroke-width="1.5" stroke-linejoin="round"/><circle cx="43" cy="19" r="2.2" fill="#1d1633"/></svg></div>
+<script>
+(function(){
+  var duck=document.getElementById('duck');
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(fine){document.body.classList.add('has-duck');
+    addEventListener('mousemove',function(e){duck.style.opacity=1;duck.style.transform='translate('+(e.clientX-8)+'px,'+(e.clientY-8)+'px)'});
+    document.addEventListener('mouseleave',function(){duck.style.opacity=0});
+    addEventListener('mousedown',function(){duck.classList.add('down')});
+    addEventListener('mouseup',function(){duck.classList.remove('down')});
+  }
+  addEventListener('click',function(e){
+    if(calm)return;
+    for(var i=0;i<7;i++){
+      var b=document.createElement('span'),d=8+Math.random()*16;
+      b.className='bubble';
+      b.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX+Math.random()*24-4)+'px;top:'+(e.clientY-Math.random()*10)+'px;--dx:'+(Math.random()*50-25)+'px;--t:'+(0.8+Math.random()*0.7)+'s';
+      document.body.appendChild(b);
+      setTimeout(function(x){x.remove()},1700,b);
+    }
+  });
+  var menu=document.querySelector('.menu');
+  document.addEventListener('click',function(e){if(menu.open&&!menu.contains(e.target)||e.target.closest('.drop a'))menu.open=false});
+  addEventListener('keydown',function(e){if(e.key==='Escape')menu.open=false});
+})();
+</script>
+</body>
+</html>
